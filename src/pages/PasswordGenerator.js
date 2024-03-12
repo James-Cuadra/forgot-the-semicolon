@@ -5,7 +5,8 @@ import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormGroup from '@mui/material/FormGroup';
 import { makeStyles } from '@mui/styles';
-import { CardHeader, Link } from '@mui/material';
+import { CardHeader } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles({
   container: {
@@ -143,9 +144,9 @@ const PasswordGenerator = () => {
         multiline={true}
         sx={{ maxHeight: '70px', paddingBottom: '15px' }} // account for super long passwords
       />
-      <Link href="/" className={classes.backButton}>
-        Back to Homepage
-      </Link>
+      <Button component={Link} className={classes.backButton} raised to="/">
+        {'Back to Homepage'}
+      </Button>
     </div>
   );
 };
