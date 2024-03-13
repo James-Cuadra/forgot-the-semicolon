@@ -14,13 +14,13 @@ const useStyles = makeStyles({
     flexDirection: 'column',
     alignItems: 'center',
     padding: '20px',
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
+    margin: '0 auto',
     backgroundColor: 'white',
     boxShadow: '0px 2px 5px rgba(0, 0, 0, 0.2)',
-    borderRadius: '5px'
+    borderRadius: '5px',
+    width: 'fit-content',
+    maxWidth: '75%',
+    marginTop: '50px'
   },
   formGroup: {
     marginBottom: '15px'
@@ -142,7 +142,7 @@ const PasswordGenerator = () => {
         value={generatedPassword}
         InputProps={{ readOnly: true }}
         multiline={true}
-        sx={{ maxHeight: '70px', paddingBottom: '15px' }} // account for super long passwords
+        sx={{ paddingBottom: '15px' }}
       />
       <Button component={Link} className={classes.backButton} raised to="/">
         {'Back to Homepage'}
