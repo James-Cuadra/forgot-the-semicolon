@@ -10,10 +10,10 @@ function App() {
     <div>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/week1" element={<PasswordGenerator />} />
-        <Route path="/week2" element={<TicTacToe />} />
-        <Route path="/week3" element={<Woops />} />
-        <Route path="/week4" element={<Woops />} />
+        <Route path="/challenge1" element={<PasswordGenerator />} />
+        <Route path="/challenge2" element={<TicTacToe />} />
+        <Route path="/challenge3" element={<Woops />} />
+        <Route path="/challenge4" element={<Woops />} />
       </Routes>
     </div>
   );
