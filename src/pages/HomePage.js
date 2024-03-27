@@ -45,7 +45,7 @@ const HomePage = () => {
   useEffect(() => {
     const solutionData = [
       { name: 'Week 1: Password Generator', path: '/week1' },
-      { name: 'Week 2: Coming soon', path: '/week2' },
+      { name: 'Week 2: Tic Tac Toe', path: '/week2' },
       { name: 'Week 3: Coming soon', path: '/week3' },
       { name: 'Week 4: Coming soon', path: '/week4' }
     ];
