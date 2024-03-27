@@ -69,6 +69,9 @@ const useStyles = makeStyles({
   },
   reset: {
     marginBottom: '15px'
+  },
+  newGame: {
+    marginTop: '10px !important'
   }
 });
 
@@ -82,10 +85,22 @@ const TicTacToe = () => {
   const [isDraw, setIsDraw] = useState(false);
   const [difficulty, setDifficulty] = useState(1);
   const [isAITurn, setIsAITurn] = useState(false);
+  const [playerXScore, setPlayerXScore] = useState(0);
+  const [playerOScore, setPlayerOScore] = useState(0);
 
   useEffect(() => {
     reset();
   }, [isOnePlayerMode]);
+
+  useEffect(() => {
+    if (winner) {
+      if (winner === 'X') {
+        setPlayerXScore((prev) => prev + 1);
+      } else {
+        setPlayerOScore((prev) => prev + 1);
+      }
+    }
+  }, [winner]);
 
   const handleClick = (index) => {
     if (board[index] || winner || isDraw || isAITurn) return;
@@ -204,6 +219,15 @@ const TicTacToe = () => {
     setCurrentPlayer('X');
     setWinner(null);
     setIsDraw(false);
+    setPlayerOScore(0);
+    setPlayerXScore(0);
+  };
+
+  const newGame = () => {
+    setBoard(Array(9).fill(null));
+    setCurrentPlayer('X');
+    setWinner(null);
+    setIsDraw(false);
   };
 
   useEffect(() => {
@@ -220,15 +244,7 @@ const TicTacToe = () => {
         setIsAITurn(false);
       }, 1000);
     }
-  }, [
-    board,
-    checkForWinner,
-    currentPlayer,
-    isOnePlayerMode,
-    winner,
-    isDraw,
-    difficulty
-  ]);
+  }, [board, currentPlayer, isOnePlayerMode, isDraw, difficulty]);
 
   return (
     <Paper className={classes.container} elevation={3}>
@@ -239,6 +255,9 @@ const TicTacToe = () => {
           ? "It's a draw!"
           : `Next player: ${currentPlayer}`}
       </Typography>
+      <h3>
+        Score: Player X: {playerXScore} - Player O: {playerOScore}
+      </h3>
       <FormControlLabel
         control={
           <Switch
@@ -285,6 +304,15 @@ const TicTacToe = () => {
         className={classes.reset}>
         Reset
       </Button>
+      {(winner || isDraw) && (
+        <Button
+          variant="contained"
+          color="secondary"
+          onClick={newGame}
+          className={classes.newGame}>
+          Play Again
+        </Button>
+      )}
       <Button component={Link} className={classes.backButton} raised to="/">
         {'Back to Homepage'}
       </Button>
