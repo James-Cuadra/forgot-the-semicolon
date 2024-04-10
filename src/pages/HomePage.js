@@ -46,7 +46,7 @@ const HomePage = () => {
     const solutionData = [
       { name: 'Challenge 1: Password Generator', path: '/challenge1' },
       { name: 'Challenge 2: Tic Tac Toe', path: '/challenge2' },
-      { name: 'Challenge 3: Coming soon', path: '/challenge3' },
+      { name: 'Challenge 3: Weather App', path: '/challenge3' },
       { name: 'Challenge 4: Coming soon', path: '/challenge4' }
     ];
     setSolutions(solutionData);

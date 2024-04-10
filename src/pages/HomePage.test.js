@@ -14,10 +14,10 @@ test('renders home page component', () => {
 
 test('renders solution links', () => {
   const solutions = [
-    { name: 'Week 1: Password Generator', path: '/week1' },
-    { name: 'Week 2: Tic Tac Toe', path: '/week2' },
-    { name: 'Week 3: Coming soon', path: '/week3' },
-    { name: 'Week 4: Coming soon', path: '/week4' }
+    { name: 'Challenge 1: Password Generator', path: '/challenge1' },
+    { name: 'Challenge 2: Tic Tac Toe', path: '/challenge2' },
+    { name: 'Challenge 3: Weather App', path: '/challenge3' },
+    { name: 'Challenge 4: Coming soon', path: '/challenge4' }
   ];
   render(
     <BrowserRouter>
