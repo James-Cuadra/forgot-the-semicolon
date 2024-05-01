@@ -17,7 +17,7 @@ test('renders solution links', () => {
     { name: 'Challenge 1: Password Generator', path: '/challenge1' },
     { name: 'Challenge 2: Tic Tac Toe', path: '/challenge2' },
     { name: 'Challenge 3: Weather App', path: '/challenge3' },
-    { name: 'Challenge 4: Coming soon', path: '/challenge4' }
+    { name: 'Challenge 4: Connect 4', path: '/challenge4' }
   ];
   render(
     <BrowserRouter>
