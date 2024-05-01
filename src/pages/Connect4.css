@@ -9,9 +9,9 @@
 
 .column {
   display: flex;
-  flex-direction: column-reverse; /* Tokens stack from bottom */
+  flex-direction: column-reverse;
   align-items: center;
-  background-color: transparent; /* Let grid color show through */
+  background-color: transparent;
   cursor: pointer;
 }
 
@@ -25,7 +25,7 @@
 }
 
 .token.falling {
-  top: 300px; /* Example, adjust as needed based on row height */
+  top: 300px;
 }
 
 .token.Red {
